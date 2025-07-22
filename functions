@@ -1,0 +1,169 @@
+# ✅ 1. Simple Greeting Function
+# Task: Write a function greet(name) that takes a name as input and prints "Hello, [name]!"
+def greeting (name):
+    print(f'Hello, {name}!')
+
+greeting('Aitbubu')
+
+😍#Use the input method: 
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Ask user for their name
+user_name = input("Enter your name: ")
+greet(user_name)
+
+# ✅ 2. Add Two Numbers
+# Task: Write a function add(a, b) that returns the sum of two numbers.
+
+# def addition(a, b):
+#     total = a + b
+#     print(f'Addition of two numbers, {a} & {b}: {total}')
+#
+# addition(5, 7)
+
+😍#user input:
+
+def addition(a, b):
+    total = a + b
+    print(f'Addition of {a} + {b} is {total}')
+
+num1 = int(input('Enter your first number: '))
+num2 = int(input('Enter your second number: '))
+
+addition(num1, num2)
+
+# ✅ 3. Check Even or Odd
+# Task: Write a function is_even(num) that returns True if the number is even, False otherwise.
+
+# def is_even(num):
+#     return num % 2 == 0
+#
+# print(is_even(3))  # Output: False
+# print(is_even(4))  # Output: True
+
+#😍 'user_input solution': 
+def is_even(num):
+    return num % 2 == 0
+
+num = int(input('Enter your number: '))
+
+if is_even(num):
+    print(f'{num} is even.')
+else:
+    print(f'{num} is odd.')
+
+# ✅ 4. Find the Maximum of Three Numbers
+# Task: Write a function find_max(a, b, c) that returns the largest of three numbers.
+
+def digit(a, b, c):
+    return max(a, b, c)
+
+num1 = int(input('Enter your first number: '))
+num2 = int(input('Enter your second number: '))
+num3 = int(input('Enter your third number: '))
+
+print(f'The maximum number is: {digit(num1, num2, num3)}')
+
+
+# ✅ 5. Count Vowels in a Word
+# Task: Write a function count_vowels(word) that returns the number of vowels in a word.
+
+def count_vowels(word):
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in word if char in vowels)
+
+print(count_vowels('Aitbubu'))
+
+#solutions with for loops: 
+def count_vowels(word):
+    vowels = 'AEIOUaeiou'  # a string of all vowel characters
+    count = 0
+    for char in word:
+        if char in vowels:
+            count += 1
+    return count
+
+any_word = input('Enter your word: ')
+
+print(f'The count of the vowels in the word: {count_vowels(any_word)}')
+
+✅ 6. Calculate Factorial
+Task: Write a function factorial(n) that returns the factorial of a number.
+# ✅ Version 1: Using a Loop
+
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+# ✅ Version 2: Using Recursion
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+num = int(input("Enter a number: "))
+print(f"The factorial of {num} is: {factorial(num)}")
+
+# ✅ 7. Check for Palindrome
+# Task: Write a function is_palindrome(word) that returns True if the word is the same backward.
+
+def is_palindrome(word):
+    return word == word[::-1]
+print(is_palindrome('Aitbubu'))
+
+
+# ✅ 8. Print a Star Pattern
+# Task: Write a function print_stars(n) that prints a triangle pattern with n rows.
+def print_stars(n):
+    for i in range(1, n + 1):
+        print('*' * i)
+
+rows = int(input("Enter the number of rows: "))
+print_stars(rows)
+
+
+# ✅ 9. Convert Celsius to Fahrenheit
+# Task: Write a function c_to_f(celsius) that converts Celsius to Fahrenheit.
+
+def c_to_f(celsius):
+    return (celsius * 9/5) + 32
+
+gradus = int(input('Enter the degree: '))
+
+print(c_to_f(gradus))
+
+# cleaner version:
+def c_to_f(celsius):
+    return (celsius * 9/5) + 32
+
+gradus = float(input('Enter temperature in Celsius: '))
+fahrenheit = c_to_f(gradus)
+
+print(f'{gradus}°C is equal to {fahrenheit}°F')
+
+
+# ✅ 10. Return List of Squares
+# Task: Write a function squares(numbers) that takes a list and returns a list of their squares.
+
+# this works only when you're squaring a single number, like:
+# def squares(numbers):
+#     return numbers ** 2
+#
+# digit = int(input('Enter your number: '))
+#
+# print(squares(digit))
+#
+# def squares(numbers):
+#     return [num ** 2 for num in numbers]
+
+# Get user input as a list of numbers
+input_str = input('Enter numbers separated by spaces: ')
+digit_list = [int(num) for num in input_str.split()]
+
+print(f'Squares: {squares(digit_list)}')
+
