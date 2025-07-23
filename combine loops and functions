@@ -1,0 +1,205 @@
+# ✅ 1. Print a Word Multiple Times
+# Task: Write a function repeat_word(word, times) that prints the given word as many times as specified.
+def repeat_word(word, times):
+    for _ in range(times):
+        print(word)
+
+# Example usage:
+repeat_word('hello', 5)
+
+
+# input() for practice:
+
+def rep_w(name, times):
+    for _ in range(times):
+        print(name)
+name_input = input('Enter your name: ')
+times_input = int(input('Enter how many times to print: '))
+repeat_word(name_input, times_input)
+
+
+# ✅ 2. Sum of Numbers from 1 to N
+# Task: Write a function sum_to_n(n) that returns the sum of numbers from 1 to n.
+def sum_to_n(n):
+    total = 0
+    for num in range(1, n + 1):
+        total += num
+    return total
+
+# Example usage:
+print(sum_to_n(100))  # Output: 5050
+
+
+# input():
+def sum_to_n(n):
+    total = 0
+    for num in range(1, n + 1):
+        total += num
+    return total
+
+# Get input from user
+n = int(input("Enter a number: "))
+print("Sum from 1 to", n, "is:", sum_to_n(n))
+
+
+# ✅ 3. Count Vowels in a Word
+# Task: Write a function count_vowels(word) that counts how many vowels are in the word.
+def count_vowels(word):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for letter in word:
+        if letter in vowels:
+            count += 1
+    return count
+
+# Example usage:
+print(count_vowels("Hello"))  # Output: 2
+
+
+# input():
+def count_vowels(word):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for letter in word:
+        if letter in vowels:
+            count += 1
+    return count
+
+# Get user input
+user_word = input("Enter a word: ")
+print("Number of vowels:", count_vowels(user_word))
+
+
+# ✅ 4. Print a Pattern of Stars
+# Task: Write a function print_stars(rows) that prints a triangle of stars like this:
+def print_stars(rows):
+    for i in range(1, rows + 1):
+        print('*' * i)
+
+# Example usage:
+print_stars(5)
+
+
+# with  input():
+
+def print_stars(rows):
+    for i in range(1, rows + 1):
+        print('*' * i)
+
+user_rows = int(input("Enter number of rows: "))
+print_stars(user_rows)
+
+
+# ✅ Square – easy with just loops:
+def print_square(size):
+    for _ in range(size):
+        print('*' * size)
+
+print_square(5)
+
+
+# ✅ Rectangle – like a square, but with different width and height:
+def print_rectangle(width, height):
+    for _ in range(height):
+        print('*' * width)
+
+print_rectangle(7, 3)
+
+# ⚠️ Circle / Oval – harder, because it’s a curved shape.
+# We can simulate it using math (x² + y² = r² for circles), or use characters to draw an approximate shape.
+#
+# ✅ Example: Simple ASCII circle
+import math
+
+def print_circle(radius):
+    for y in range(-radius, radius+1):
+        for x in range(-radius, radius+1):
+            if x**2 + y**2 <= radius**2:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+print_circle(5)
+
+| Shape     | Difficulty | Loops Only | Math Needed |
+| --------- | ---------- | ---------- | ----------- |
+| Square    | Easy       | ✅ Yes      | ❌ No        |
+| Triangle  | Easy       | ✅ Yes      | ❌ No        |
+| Rectangle | Easy       | ✅ Yes      | ❌ No        |
+| Circle    | Medium     | ❌ Not only | ✅ Yes       |
+| Oval      | Medium     | ❌ Not only | ✅ Yes       |
+
+
+# ✅ 5. Multiply Elements of a List
+# Task: Write a function multiply_list(numbers) that returns the product of all elements.
+
+def multiply_list(numbers):
+    total = 1
+    for num in numbers:
+        total *= num
+    return total
+
+# Example usage:
+print(multiply_list([2, 3, 4]))  # Output: 24
+
+
+# ✅ 6. Reverse a Word
+# Task: Write a function reverse_word(word) that returns the word in reverse.
+
+def reverse_word(word):
+    return word[::-1]
+
+print(reverse_word('Aitbubu'))  # Output: ububtiA
+
+# ✅ 7. Even or Odd Counter
+# Task: Write a function count_even_odd(numbers) that prints how many numbers are even and how many are odd.
+
+def count_even_odd(numbers):
+    even_count = 0
+    odd_count = 0
+    for num in numbers:
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    print(f"Even numbers: {even_count}")
+    print(f"Odd numbers: {odd_count}")
+
+# Example usage:
+count_even_odd([1, 2, 3, 4, 5, 6])
+
+# ✅ 8. Find the Maximum Number
+# Task: Write a function find_max(numbers) that returns the largest number in a list.
+
+def find_max(numbers):
+    return max(numbers)
+
+print(find_max([10, 20, 30]))  # Output: 30
+
+# ✅ 9. Check Prime Number
+# Task: Write a function is_prime(n) that returns True if the number is prime, otherwise False.
+
+def is_prime(n):
+    if n <= 1:
+        return False  # 0 and 1 are not prime
+    for i in range(2, int(n**0.5) + 1):  # check up to square root of n
+        if n % i == 0:
+            return False
+    return True
+
+# Example usage:
+print(is_prime(7))   # True
+print(is_prime(12))  # False
+
+
+# ✅ 10. Print Multiplication Table
+# Task: Write a function multiplication_table(n) that prints the multiplication table of a number n up to 10.
+
+def multiplication_table(n):
+    for i in range(1, 11):
+        print(f"{n} x {i} = {n * i}")
+
+multiplication_table(10)
+
+
